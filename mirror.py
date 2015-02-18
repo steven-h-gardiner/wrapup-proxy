@@ -64,7 +64,7 @@ TRANSFORMED_CONTENT_TYPES = frozenset([
   "text/css",
 ])
 
-MAX_CONTENT_SIZE = 10 ** 6
+MAX_CONTENT_SIZE = 10 ** 9
 
 ###############################################################################
 
@@ -106,7 +106,7 @@ class MirroredContent(object):
     """
     logging.debug("Fetching '%s'", mirrored_url)
     try:
-      response = urlfetch.fetch(mirrored_url)
+      response = urlfetch.fetch(mirrored_url,deadline=120)
     except (urlfetch.Error, apiproxy_errors.Error):
       logging.exception("Could not fetch URL")
       return None

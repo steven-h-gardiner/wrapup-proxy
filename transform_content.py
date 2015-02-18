@@ -103,4 +103,15 @@ def TransformContent(base_url, accessed_url, content):
       "accessed_dir": accessed_dir,
     }
     content = re.sub(pattern, fixed_replacement, content)
+
+
+  content = content + "<div style='display: none'><table class='wrapup-table' border='1'><thead><tr><th>HEADING</th></tr></thead><tbody><tr><td>DATA</td></tr></tbody></table></div>";
+
+  content = content + "<script src='/static/jquery-2.1.1.min.js'></script>";
+  content = content + "<script src='/static/jquery.xpath.js'></script>";
+  content = content + "<script src='/static/smartwrap-docmarker.js'></script>";
+  content = content + "<script src='/static/wrapup.js'></script>";
+  content = content + "<script src='/static/wrapup-tablify.js'></script>";
+  content = content + "<script src='/static/wrapup-access.user.js'></script>";
+
   return content
